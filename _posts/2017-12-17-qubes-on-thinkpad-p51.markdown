@@ -2,6 +2,7 @@
 layout: post
 title:  "Qubes OS R3.2 on a ThinkPad P51"
 date:   2017-12-17 12:00:00 -0600
+categories: blog
 ---
 
 With significant help from members of the [qubes-users][qubes-users] mailing list, I was able to install [Qubes OS][qubes-os] R3.2 on my new ThinkPad P51 (model 20HJS0BX00). The starting point was the Qubes OS [Hardware Compatibility List][qubes-hcl] linking to [swami's post][swami-post] on qubes-users, which describes or links all the steps below except for the use of the USB-to-Ethernet adapter to run the initial update. 
