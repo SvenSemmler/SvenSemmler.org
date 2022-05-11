@@ -6,7 +6,7 @@ baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're sit
 description: > # description of the site (multiple lines allowed)
   notes about Qubes OS and related topics
 
-permalink: /:slug.html
+permalink: /blog/:year/:month/:day/:title:output_ext
 
 favicon: "favicon.ico" # name+extension of favicon (which must be put on the root folder)
 

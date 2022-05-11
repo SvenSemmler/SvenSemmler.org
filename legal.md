@@ -9,8 +9,9 @@ title: legal
 
 ## [license](#license)
 
-* jekyll
-* no-style-please Copyright (c) 2020 Riccardo Graziosi
+* http://creativecommons.org/licenses/by/4.0/
+* https://jekyllrb.com/
+* https://github.com/riggraz/no-style-please Copyright (c) 2020 Riccardo Graziosi
 
 ## [privacy](#privacy)
 
