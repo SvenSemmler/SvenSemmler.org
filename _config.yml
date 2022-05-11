@@ -4,7 +4,7 @@ email: Sven@SvenSemmler.org # email of site's author
 url: https://www.SvenSemmler.org # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
-  Notes and thoughts about Qubes OS and related topics.
+  notes about Qubes OS and related topics
 
 permalink: /:slug.html
 
