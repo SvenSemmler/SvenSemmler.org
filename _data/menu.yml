@@ -1,0 +1,21 @@
+entries:
+  - title: info
+    entries:
+      - title: email
+        url: mailto:Sven@SvenSemmler.org
+      - title: pgp key
+        url: https://keys.openpgp.org/vks/v1/by-fingerprint/DA5975C9ABC40C833B2F620B2A632C537D744BC7
+      - title: rss
+        url: /feed.xml
+        
+  #- title: notes on <a href='https://www.qubes-os.org/'>Qubes OS</a> and related topics
+  #  entries:
+  #    - title: automate debian-minimal based template creation
+  #      url: notes/deb-min-templates
+
+  - title: blog
+    post_list:
+      limit: 5
+      show_more: false
+      show_more_text: See archive...
+      show_more_url: archive.html
