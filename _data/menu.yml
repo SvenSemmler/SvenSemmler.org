@@ -8,10 +8,10 @@ entries:
       - title: rss
         url: /feed.xml
         
-  - title: notes on <a href='https://www.qubes-os.org/'>Qubes OS</a> and related topics
-    entries:
-      - title: automate debian-minimal based template creation
-        url: notes/deb-min-templates
+  #- title: notes on <a href='https://www.qubes-os.org/'>Qubes OS</a> and related topics
+  #  entries:
+  #    - title: automate debian-minimal based template creation
+  #      url: notes/deb-min-templates
 
   - title: blog
     post_list:
