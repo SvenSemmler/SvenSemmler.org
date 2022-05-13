@@ -23,7 +23,7 @@ author: Sven Semmler # name of site's author
 email: Sven@SvenSemmler.org # email of site's author
 
 baseurl: "/svensemmler.org" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.svensemmler.org" # the base hostname & protocol for your site, e.g. http://example.com
 description: > # description of the site (multiple lines allowed)
   notes on Qubes OS and related topics
   
