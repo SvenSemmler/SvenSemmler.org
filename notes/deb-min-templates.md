@@ -32,8 +32,8 @@ Bash scripts are actually like programs, with control flow and conditional state
 ```
 #!/bin/bash
 
-SOURCE_TEMPLATE=debian-10-minimal
-TARGET_TEMPLATE=deb-10-min
+SOURCE_TEMPLATE=debian-11-minimal
+TARGET_TEMPLATE=deb-11-min
 
 qvm-template install $SOURCE_TEMPLATE
 qvm-clone $SOURCE_TEMPLATE $TARGET_TEMPLATE
@@ -81,9 +81,9 @@ qvm-clone $SOURCE_TEMPLATE $TARGET_TEMPLATE
 qvm-remove -f $SOURCE_TEMPLATE
 ```
 
-Most of this was already explained in [the basics](#basics). First there is a call to qubes-dom0-update to install the qubes-template-debian-10-minimal package. Once that happened, the debian-10-minimal template is then cloned into deb-10-min and finally the debian-10-minimal template is removed again.
+Most of this was already explained in [the basics](#basics). First there is a call to `qvm-template` to install debian-11-minimal package. Once that happened, the debian-11-minimal template is then cloned into deb-11-min and finally the debian-11-minimal template is removed again.
 
-One could customize the actual debian-10-minimal template instead of cloning it, but I found it better to have a dedicated personal min template and leave the name used by the Qubes OS package (in this case debian-10-minimal) free to mean the unchanged as-provided-by-Qubes version of the template.
+One could customize the actual debian-11-minimal template instead of cloning it, but I found it better to have a dedicated personal min template and leave the name used by the Qubes OS package (in this case debian-11-minimal) free to mean the unchanged as-provided-by-Qubes version of the template.
 
 ```
 qvm-run --pass-io -u root $TARGET_TEMPLATE "rm -Rf /home/user/QubesIncoming"
