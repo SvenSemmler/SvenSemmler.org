@@ -40,7 +40,7 @@ qvm-clone $SOURCE_TEMPLATE $TARGET_TEMPLATE
 qvm-remove -f $SOURCE_TEMPLATE
 ```
 
-In the first two lines we define two variables named SOURCE_TEMPLATE and TARGET_TEMPLATE and give them values. Then later in the script we can use those variables. This is especially useful if those scripts get longer and more involved and pretty much every line will at least reference the $TARGET_TEMPLATE qube. Note that the way to use a variable is to add the '$' sign in front of it. Now, if at a later time you want to use this script to download the debian-11-minimal tempalte, clone it into a deb-11-min and then do things to it, all you have to do is change the variables at the top of the script. 
+In the first two lines we define two variables named SOURCE_TEMPLATE and TARGET_TEMPLATE and give them values. Then later in the script we can use those variables. This is especially useful if those scripts get longer and more involved and pretty much every line will at least reference the $TARGET_TEMPLATE qube. Note that the way to use a variable is to add the '$' sign in front of it. Now, if at a later time you want to use this script to download the debian-11-minimal template, clone it into a deb-11-min and then do things to it, all you have to do is change the variables at the top of the script. 
 
 Later we will also have little helper scripts that get called from other scripts. In that case, we want to be able to use parameters when calling the script. Like this:
 
@@ -137,7 +137,7 @@ qvm-run --pass-io -u root $TARGET_TEMPLATE 'echo "XTerm*foreground: linen" >> /e
 
 In debian the file /etc/X11/Xresouces/x11-common holds your Xft.* definitions and others like the ones for XTerm can be added here too. This is entirely optional. But if you use a HiDPI screen, chances are you want to define your dpi value (ideally the same you selected in the XFCE preferences in dom0). The rest are just my personal perferences for fonts, size, fore- and background colors I want in XTerm. Adjust to your own preferences or skip this entirely.
 
-The commands executed inside the qube here are `echo` and the `>>` operator. The first simple prints whatever was given to it. So `echo "Hello world!"` would simply print `Hello world!`. The `>>` operator takes whatever is printed on the terminal and appends it to the file given to it. So `echo "Hello world!" >> greetings.txt` would add a line 'Hello world!' to the end of the greetings.txt file.
+The commands executed inside the qube here are `echo` and the `>>` operator. The first simply prints whatever was given to it. So `echo "Hello world!"` would print `Hello world!`. The `>>` operator takes whatever is printed on the terminal and appends it to the file given to it. So `echo "Hello world!" >> greetings.txt` would add a line 'Hello world!' to the end of the greetings.txt file.
 
 We use this mechanism to append these lines to /etc/X11/Xresources/x11-common:
 
@@ -169,7 +169,7 @@ Here we first update and upgrade the template in the first line and then install
 
 * qubes-core-agend-passwordless-root ... makes it so you can simply use `sudo` within a qube without having to specify a password. If your blood is boiling now, [read this](https://www.qubes-os.org/doc/vm-sudo/) and if you still haven't come down [discuss here](https://forum.qubes-os.org/t/3517).
 
-* qubes-app-shutdown-idle ... is a script that will shutdown a qube if it doesn't have any active windows for a set period of time. The script needs to be activated by calling `qvm-features` on a qube by qube basis. So just installing the package won't make it do anything. I dediced to make this part of my personal min template as I enable it in the majority of cases.
+* qubes-app-shutdown-idle ... is a script that will shutdown a qube if it doesn't have any active windows for a set period of time. The script needs to be activated by calling `qvm-features` on a qube by qube basis. So just installing the package won't make it do anything. I decided to make this part of my personal min template as I enable it in the majority of cases.
 
 While I'd strongly recommend you to install `qubes-core-agent-passwordless-root` to make things work smoothly, the shutdown-idle script is entirely optional.
 
@@ -250,7 +250,7 @@ Finally we use `qvm-shutdown --wait` to shutdown the template (which was automat
 
 ### [building custom templates](#custom-templates)
 
-Now that we have our personalized minimal template, we can write the first script for a dedicated tempalte. Let's start with the template for sys-net. This will introduce us to the remaining concepts, so that the rest of the guide can be less wordy and more of a reference nature.
+Now that we have our personalized minimal template, we can write the first script for a dedicated template. Let's start with the template for sys-net. This will introduce us to the remaining concepts, so that the rest of the guide can be less wordy and more of a reference nature.
 
 ```
 #!/bin/bash
@@ -273,19 +273,19 @@ qvm-shutdown --wait $TARGET_TEMPLATE
 
 By now it should be easy for you to understand what the above script does:
 
-1. define variables for source and target tempaltes
+1. define variables for source and target templates
 2. clone from the source to the target
 3. call a series of 'add-feature' helper scripts to be applied to the target
 4. shutdown the target
 
-This is how all the 'build' scripts will look. So going forward I'll simply describe the 'add-feature' helper scripts and then summarize recommendations how to combine them, like so:
+This is how all the 'build' scripts will look. So going forward I'll simply describe the 'add-feature' helper scripts and then summarize recommendations on how to combine them, like so:
 
 #### library (calibre ebook management)
 
 | feature(s)   | comment                                      |
 |--------------|----------------------------------------------|
 | calibre      | main application                             |
-| file-manager | convinient handling of files (import/export) |
+| file-manager | convenient handling of files (import/export) |
 | net          | send emails from calibre                     |
 | usb          | mount ebook reader                           |
 | qt           | apply system style to calibre                | 
@@ -293,9 +293,9 @@ This is how all the 'build' scripts will look. So going forward I'll simply desc
 
 ### [features](#features)
 
-In this section the 'add-feature' helper scripts I use and that have conceiable utility to you are listed. Obviously this can never be complete and is bound to not have the feature script you need. The whole point of this guide it to teach you the how, so you can take it from there.
+In this section the 'add-feature' helper scripts I use and that have conceivable utility to you are listed. Obviously this can never be complete and is bound to not have the feature script you need. The whole point of this guide it to teach you the how, so you can take it from there.
 
-First there are the dead simple ones, that simply install one or more packages. Those always look the the same. Here is the one for the 'audio' feature:
+First there are the dead simple ones, that simply install one or more packages. Those always look the same. Here is the one for the 'audio' feature:
 
 ```
 #!/bin/bash
@@ -304,7 +304,7 @@ echo +++ installing audio feature into $1
 qvm-run --pass-io -u root $1 "apt install --no-install-recommends pulseaudio-qubes -y"
 ```
 
-The `echo` line just prints the name of the feature to the terminal output so you can see what is happening at the moment. The second line calls `apt` as root (obviously) and add the `--no-install-recommends` parameter to make sure only dependencies that are truely required are installed. In this particular example only the `pulseaudio-qubes` package is required.
+The `echo` line just prints the name of the feature to the terminal output so you can see what is happening at the moment. The second line calls `apt` as root (obviously) and add the `--no-install-recommends` parameter to make sure only dependencies that are truly required are installed. In this particular example only the `pulseaudio-qubes` package is required.
 
 Here is a list of all those simple features and the packages they require:
 
@@ -377,7 +377,7 @@ qvm-run --pass-io -u root $1 "apt install --no-install-recommends hplip hplip-gu
 qvm-run $1 "sudo hp-setup"
 ```
 
-This script is meant for HP printers and it will run the `hp-setup` program at the end. I find this useful, because I can then attach the actual printer USB to the template using the Qubes OS tray icon for this prupose. Then in the HP setup program I can discover and install the printer. This has the effect that all qubes that are based on this template, will be able to print to this device given the user assinged it to the qube in question via the tray icon. 
+This script is meant for HP printers and it will run the `hp-setup` program at the end. I find this useful, because I can then attach the actual printer USB to the template using the Qubes OS tray icon for this purpose. Then in the HP setup program I can discover and install the printer. This has the effect that all qubes that are based on this template, will be able to print to this device given the user assigned it to the qube in question via the tray icon. 
 
 #### net-rand-hostname
 
@@ -440,4 +440,3 @@ Now finally a few examples...
 | qt           | apply system style to calibre                | 
 | ffmpeg       | allow for audiobook processing               |
 
-(This is a work in progress, please subscribe to the [RSS feed](/feed.xml) so you get notified of updates to this page through my blog posts)
