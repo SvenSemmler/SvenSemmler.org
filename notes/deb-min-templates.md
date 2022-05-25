@@ -123,7 +123,7 @@ The qvm-copy-to-vm and qvm-run commands are explained in [the basics](#basics), 
 2. 'rm -Rf' ... removes a folder with all subfolders and files in it
 3. 'mv' ... moves files from a source to a destination
 
-So what happens here is that we first make sure the destination is empty and then move the recieved files from the QubesIncoming folder to the intended destination. We have to do all of this as 'root' because the /user/share/... destination is only writeable for root.
+So what happens here is that we first make sure the destination is empty and then move the received files from the QubesIncoming folder to the intended destination. We have to do all of this as 'root' because the /user/share/... destination is only writeable for root.
 
 ```
 # setup /etc/X11/Xresources/x11-common
@@ -135,7 +135,7 @@ qvm-run --pass-io -u root $TARGET_TEMPLATE 'echo "XTerm*background: #300a24" >> 
 qvm-run --pass-io -u root $TARGET_TEMPLATE 'echo "XTerm*foreground: linen" >> /etc/X11/Xresources/x11-common'
 ```
 
-In debian the file /etc/X11/Xresouces/x11-common holds your Xft.* definitions and others like the ones for XTerm can be added here too. This is entirely optional. But if you use a HiDPI screen, chances are you want to define your dpi value (ideally the same you selected in the XFCE preferences in dom0). The rest are just my personal perferences for fonts, size, fore- and background colors I want in XTerm. Adjust to your own preferences or skip this entirely.
+In debian the file /etc/X11/Xresources/x11-common holds your Xft.* definitions and others like the ones for XTerm can be added here too. This is entirely optional. But if you use a HiDPI screen, chances are you want to define your dpi value (ideally the same you selected in the XFCE preferences in dom0). The rest are just my personal preferences for fonts, size, fore- and background colors I want in XTerm. Adjust to your own preferences or skip this entirely.
 
 The commands executed inside the qube here are `echo` and the `>>` operator. The first simply prints whatever was given to it. So `echo "Hello world!"` would print `Hello world!`. The `>>` operator takes whatever is printed on the terminal and appends it to the file given to it. So `echo "Hello world!" >> greetings.txt` would add a line 'Hello world!' to the end of the greetings.txt file.
 
@@ -167,7 +167,7 @@ qvm-run --pass-io -u root $TARGET_TEMPLATE "apt install qubes-core-agent-passwor
 
 Here we first update and upgrade the template in the first line and then install two packages in the second line.
 
-* qubes-core-agend-passwordless-root ... makes it so you can simply use `sudo` within a qube without having to specify a password. If your blood is boiling now, [read this](https://www.qubes-os.org/doc/vm-sudo/) and if you still haven't come down [discuss here](https://forum.qubes-os.org/t/3517).
+* qubes-core-agent-passwordless-root ... makes it so you can simply use `sudo` within a qube without having to specify a password. If your blood is boiling now, [read this](https://www.qubes-os.org/doc/vm-sudo/) and if you still haven't come down [discuss here](https://forum.qubes-os.org/t/3517).
 
 * qubes-app-shutdown-idle ... is a script that will shutdown a qube if it doesn't have any active windows for a set period of time. The script needs to be activated by calling `qvm-features` on a qube by qube basis. So just installing the package won't make it do anything. I decided to make this part of my personal min template as I enable it in the majority of cases.
 
@@ -179,7 +179,7 @@ While I'd strongly recommend you to install `qubes-core-agent-passwordless-root`
 qvm-run --pass-io -u root $TARGET_TEMPLATE "update-alternatives --set x-terminal-emulator /usr/bin/xterm"
 ```
 
-I like XTerm, so I want it to be the default terminal in all my qubes. That's exactly what the above call to [`update-alternaives`](https://wiki.debian.org/DebianAlternatives) acomplishes.
+I like XTerm, so I want it to be the default terminal in all my qubes. That's exactly what the above call to [`update-alternatives`](https://wiki.debian.org/DebianAlternatives) accomplishes.
 
 ```
 # copy GTK configs and desktop shortcuts into /etc/skel
@@ -316,7 +316,7 @@ Here is a list of all those simple features and the packages they require:
 |              | gnome-keyring                    | remember passwords
 |              | firmware-iwlwifi                 | Intel WiFi firmware
 | file-manager | nautilus                         | 
-|              | qubes-core-agent-nautilus        | Qubes OS context menues 
+|              | qubes-core-agent-nautilus        | Qubes OS context menus 
 |              | zenity                           | progress dialog
 |              | libblockdev-crypto2              | handle encrypted drives
 |              | exfat-fuse, exfat-utils          | handle ExFAT drives
@@ -414,7 +414,7 @@ Here is the contents of 00-macrandomize.conf can be found on the on the [Qubes-C
 #!/bin/bash
 
 echo +++ installing libreoffice feature into $1
-# libreoffice, QT interface to workaround GUI lag, spelling dictionaries, help, thesarus
+# libreoffice, QT interface to workaround GUI lag, spelling dictionaries, help, thesaurus
 qvm-run --pass-io -u root $1 "apt install libreoffice libreoffice-kf5 hunspell-en-us aspell-en wamerican wamerican-small wamerican-large libreoffice-help-en-us mythes-en-us -y"
 qvm-run --pass-io -u root $1 'echo "SAL_USE_VCLPLUGIN=kf5" >> /etc/environment'
 ```
@@ -434,7 +434,7 @@ Now finally a few examples...
 | feature(s)   | comment                                      |
 |--------------|----------------------------------------------|
 | calibre      | main application                             |
-| file-manager | convinient handling of files (import/export) |
+| file-manager | convenient handling of files (import/export) |
 | net          | send emails from calibre                     |
 | usb          | mount ebook reader                           |
 | qt           | apply system style to calibre                | 
