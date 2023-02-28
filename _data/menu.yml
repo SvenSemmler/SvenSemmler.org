@@ -7,7 +7,6 @@ entries:
         url: https://keys.openpgp.org/vks/v1/by-fingerprint/DA5975C9ABC40C833B2F620B2A632C537D744BC7
       - title: rss
         url: feed.xml
-      - title: <a rel="me" href="https://twitter.com/SvenSemmler">twitter</a>, <a rel="me" href="https://noagendasocial.com/@sven">mastodon</a>
         
   - title: notes on <a href='https://www.qubes-os.org/'>Qubes OS</a> and related topics
     entries:
