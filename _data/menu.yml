@@ -13,7 +13,7 @@ entries:
 
   - title: contact
     entries:
-      - title: <a href='mailto:Sven@SvenSemmler.org'>email</a> (<a href='https://keys.openpgp.org/vks/v1/by-fingerprint/0C276715E93D4CE54007BDBF54EB584E8668B05F'>public key</a>)
-      - title: matrix
-        url: https://matrix.to/#/@svensemmler:matrix.org
+      - title: email <a href='mailto:Sven@SvenSemmler.org'>Sven@SvenSemmler.org</a>
+      - title: fingerprint <a href='https://keys.openpgp.org/vks/v1/by-fingerprint/0C276715E93D4CE54007BDBF54EB584E8668B05F'>0C27 6715 E93D 4CE5 4007 BDBF 54EB 584E 8668 B05F</a>
+      - title: matrix <a href='https://matrix.to/#/@svensemmler:matrix.org'>@svensemmler:matrix.org</a>
         
