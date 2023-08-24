@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Changing my public key"
+title:  "New public key"
 ---
 
 I use a [Nitrokey](https://www.nitrokey.com/) to generate and store my private key. The key never leaves the device and no other copy exists. Usage of the key is protected by a rate-limited PIN code. The only way it could get compromised is someone taking the Nitrokey and [beating the PIN out of me](https://xkcd.com/538/).
