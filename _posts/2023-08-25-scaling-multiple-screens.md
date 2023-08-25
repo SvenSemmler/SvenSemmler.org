@@ -1,6 +1,6 @@
 ---
-layout: page
-title: scaling multiple screens with very different DPI
+layout: post
+title: Scaling on multiple screens (with different DPI)
 ---
 
 When using Qubes OS with high DPI screens one has to set the DPI / scaling for dom0 and each of the qubes. But what if there are two screens supporting very different DPI? In the past my solution was to calculate some kind of compromise DPI value and then set it everywhere. As a result things looked a little bit too big on one screen and a little bit too small on the other. Also, many applications do not scale gracefully.
