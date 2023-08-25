@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Started work on my first 'note'"
+title:  Started my first note
 ---
 
 About a year ago I [promised](https://forum.qubes-os.org/t/2603/39) in a Qubes OS Forum thread to write a guide on how to automate debian-minimal based template creation. Today I publish a [first rough and incomplete draft](/notes/deb-min-templates), that nevertheless should be useful.

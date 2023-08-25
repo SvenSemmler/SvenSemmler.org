@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Qubes OS R3.2 on a ThinkPad P51"
+title:  Qubes OS R3.2 on a ThinkPad P51
 ---
 
 > Since Qubes OS R4.0.3 no workarounds or troubleshooting are required anymore and the ThinkPad P51 is now listed as one of the [community-recommended computers](https://forum.qubes-os.org/t/5560).
