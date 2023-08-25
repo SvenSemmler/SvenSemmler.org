@@ -438,3 +438,5 @@ SAL_USE_VCLPLUGIN=kf5
 ```
 
 This is necessary since there currently seems to be an issue with LibreOffice's GTK interface when used in Qubes OS. CPU load and scrolling speed are not satisfactory. Fortunately the KDE interface implementation for LibreOffice does not have this issue and it is trivially easy for us to select it instead.
+
+> Please post all feedback, question or correction into [this thread](https://forum.qubes-os.org/t/11421).
