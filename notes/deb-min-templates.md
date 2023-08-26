@@ -9,7 +9,7 @@ This page summarizes how to automate debian-minimal based template creation to e
 * easy and fast upgrade
 * no need to backup templates
 
-The recommended and more flexible way of doing this is to write [salt](https://www.qubes-os.org/doc/salt/) formula, while the more basic bash script based approach documented on this page works too and might be easier to understand. Obviously all the health warnings about running code in dom0 apply. In a nutshell: don't ever run any code that you don't trust. And the only way to truly trust code is to understand what it does.
+The recommended and more flexible way of doing this is to write [salt](https://www.qubes-os.org/doc/salt/){:target="_blank"} formula, while the more basic bash script based approach documented on this page works too and might be easier to understand. Obviously all the health warnings about running code in dom0 apply. In a nutshell: don't ever run any code that you don't trust. And the only way to truly trust code is to understand what it does.
 
 ### The basics
 
@@ -158,7 +158,7 @@ qvm-run --pass-io -u root $TARGET_TEMPLATE "sed -i -- 's/https:\/\//http:\/\/HTT
 
 If you are using apt-cacher-ng then you want to add the above lines. If you never heard about apt-cacher-ng, then you don't use it and you SHOULD NOT add the above lines. They will break your updates if you do.
 
-[`sed`](https://www.gnu.org/software/sed/manual/sed.html) is one of those super powerful *nix tools. It can parse text and then transform it. The argument `s/https:\/\//http:\/\/HTTPS\/\/\//g` given to it is a [regular expression](https://en.wikipedia.org/wiki/Regular_expression) that tells sed to look for `https://` and replace it with `http://HTTPS///`.
+[`sed`](https://www.gnu.org/software/sed/manual/sed.html){:target="_blank"} is one of those super powerful *nix tools. It can parse text and then transform it. The argument `s/https:\/\//http:\/\/HTTPS\/\/\//g` given to it is a [regular expression](https://en.wikipedia.org/wiki/Regular_expression){:target="_blank"} that tells sed to look for `https://` and replace it with `http://HTTPS///`.
 
 ```bash
 # install basic packages
@@ -169,7 +169,7 @@ qvm-run --pass-io -u root $TARGET_TEMPLATE "apt install qubes-core-agent-passwor
 
 Here we first update and upgrade the template in the first line and then install two packages in the second line.
 
-* qubes-core-agent-passwordless-root ... makes it so you can simply use `sudo` within a qube without having to specify a password. If your blood is boiling now, [read this](https://www.qubes-os.org/doc/vm-sudo/) and if you still haven't come down [discuss here](https://forum.qubes-os.org/t/3517).
+* qubes-core-agent-passwordless-root ... makes it so you can simply use `sudo` within a qube without having to specify a password. If your blood is boiling now, [read this](https://www.qubes-os.org/doc/vm-sudo/){:target="_blank"} and if you still haven't come down [discuss here](https://forum.qubes-os.org/t/3517){:target="_blank"}.
 
 * qubes-app-shutdown-idle ... is a script that will shutdown a qube if it doesn't have any active windows for a set period of time. The script needs to be activated by calling `qvm-features` on a qube by qube basis. So just installing the package won't make it do anything. I decided to make this part of my personal min template as I enable it in the majority of cases.
 
@@ -181,7 +181,7 @@ While I'd strongly recommend you to install `qubes-core-agent-passwordless-root`
 qvm-run --pass-io -u root $TARGET_TEMPLATE "update-alternatives --set x-terminal-emulator /usr/bin/xterm"
 ```
 
-I like XTerm, so I want it to be the default terminal in all my qubes. That's exactly what the above call to [`update-alternatives`](https://wiki.debian.org/DebianAlternatives) accomplishes.
+I like XTerm, so I want it to be the default terminal in all my qubes. That's exactly what the above call to [`update-alternatives`](https://wiki.debian.org/DebianAlternatives){:target="_blank"} accomplishes.
 
 ```bash
 # copy GTK configs and desktop shortcuts into /etc/skel
@@ -405,7 +405,7 @@ qvm-run --pass-io -u root $1 "chmod +x /etc/network/if-pre-up.d/00_hostname"
 qvm-run --pass-io -u root $1 "touch /etc/hosts.lock"
 ```
 
-Here is the contents of 00_hostname can be found on the on the [Qubes-Community](https://github.com/Qubes-Community/Contents/blob/master/docs/privacy/anonymizing-your-mac-address.md#randomize-the-hostname) website as well as an explanation of the above steps.
+Here is the contents of 00_hostname can be found on the on the [Qubes-Community](https://github.com/Qubes-Community/Contents/blob/master/docs/privacy/anonymizing-your-mac-address.md#randomize-the-hostname){:target="_blank"} website as well as an explanation of the above steps.
 
 #### net-rand-mac
 
@@ -418,7 +418,7 @@ qvm-run --pass-io -u root $1 "cp /home/user/QubesIncoming/dom0/00-macrandomize.c
 qvm-run --pass-io -u root $1 "rm -Rf /home/user/QubesIncoming"
 ```
 
-Here is the contents of 00-macrandomize.conf can be found on the on the [Qubes-Community](https://github.com/Qubes-Community/Contents/blob/master/docs/privacy/anonymizing-your-mac-address.md#randomize-all-ethernet-and-wifi-connections) website as well as an explanation of the above steps.
+Here is the contents of 00-macrandomize.conf can be found on the on the [Qubes-Community](https://github.com/Qubes-Community/Contents/blob/master/docs/privacy/anonymizing-your-mac-address.md#randomize-all-ethernet-and-wifi-connections){:target="_blank"} website as well as an explanation of the above steps.
 
 #### office
 
@@ -439,4 +439,4 @@ SAL_USE_VCLPLUGIN=kf5
 
 This is necessary since there currently seems to be an issue with LibreOffice's GTK interface when used in Qubes OS. CPU load and scrolling speed are not satisfactory. Fortunately the KDE interface implementation for LibreOffice does not have this issue and it is trivially easy for us to select it instead.
 
-> Please post all feedback, question or correction into [this thread](https://forum.qubes-os.org/t/11421).
+> Please post all feedback, question or correction into [this thread](https://forum.qubes-os.org/t/11421){:target="_blank"}.
