@@ -1,9 +1,4 @@
 entries:
-  - title: notes on <a href="https://www.qubes-os.org/" target="_blank">Qubes OS</a> and related topics
-    entries:
-      - title: automate debian-minimal based template creation
-        url: notes/deb-min-templates
-
   - title: blog
     post_list:
       limit: 5
@@ -15,5 +10,4 @@ entries:
     entries:
       - title: email <a href="mailto:Sven@SvenSemmler.org">Sven@SvenSemmler.org</a>
       - title: fingerprint <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/0C276715E93D4CE54007BDBF54EB584E8668B05F" target="_blank">0C27 6715 E93D 4CE5 4007 BDBF 54EB 584E 8668 B05F</a>
-      - title: matrix <a href="https://matrix.to/#/@svensemmler:matrix.org" target="_blank">@svensemmler:matrix.org</a>
         
