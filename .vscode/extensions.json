@@ -3,7 +3,6 @@
     "streetsidesoftware.code-spell-checker",
     "actboy168.tasks",
     "yzhang.markdown-all-in-one",
-    "davidanson.vscode-markdownlint",
-    "dedsec727.jekyll-run"
+    "davidanson.vscode-markdownlint"
   ]
 }
