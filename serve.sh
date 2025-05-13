@@ -7,13 +7,13 @@ if [ "$OS_TYPE" = "Darwin" ]; then
 
     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
     source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-    chruby ruby-3.1.7
+    chruby ruby-3.4.1
 
 elif [ "$OS_TYPE" = "Linux" ]; then
     echo "Running on Linux"
 
-    source ~/.bashrc
-    rbenv global 3.1.7
+    #source ~/.bashrc
+    #rbenv global 3.1.7
 else
     echo "Unknown OS: $OS_TYPE"
 fi
