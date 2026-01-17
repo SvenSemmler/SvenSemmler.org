@@ -43,3 +43,5 @@ gem "csv"
 gem "bigdecimal"
 
 gem "liquid"
+
+gem "openssl", "~> 3.3.1"
